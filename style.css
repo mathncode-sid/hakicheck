@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #1c1c1c;
+  background-color: #f7f9fb;
+  line-height: 1.6;
+}
+
+header.hero {
+  background: linear-gradient(to right, #43ca0d, #a7bda8);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: white;
+  color: #43ca0d;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #9eeba3;
+}
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 2rem;
+}
+
+.features, .vision, .contact {
+  padding: 20px 40px;
+}
+
+.cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.vision p, .vision blockquote {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+blockquote {
+  font-style: italic;
+  color: #495057;
+}
+
+.contact p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #dee2e6;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
