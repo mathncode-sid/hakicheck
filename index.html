@@ -1,69 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HakiCheck – Truth in Every Click</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HakiCheck - Truth in Every Click</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <nav>
-      <h1 class="logo">HakiCheck</h1>
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#vision">Vision</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🔍</span>
+                <span class="logo-text">HakiCheck</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#submit" class="nav-link" data-section="submit">Submit</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-section="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
-    <div class="hero-content">
-      <h2>Truth in Every Click</h2>
-      <p>AI-powered real-time verification for the digital age.</p>
-      <a href="#features" class="btn">Explore Features</a>
-    </div>
-  </header>
 
-  <section id="features" class="features">
-    <h2 class="section-title">Key Features</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>🔎 Instant Analysis</h3>
-        <p>Submit headlines or articles for real-time verification.</p>
-      </div>
-      <div class="card">
-        <h3>📊 Confidence Score</h3>
-        <p>See how likely the content is to be real, fake, or uncertain.</p>
-      </div>
-      <div class="card">
-        <h3>🤖 AI Reasoning</h3>
-        <p>Receive explainable, AI-generated justifications.</p>
-      </div>
-      <div class="card">
-        <h3>🔗 Verified Sources</h3>
-        <p>Explore links to similar, fact-checked stories.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Landing Section -->
+        <section id="home" class="section landing-section active">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="highlight">HakiCheck</span>
+                            <br>Truth in Every Click
+                        </h1>
+                        <p class="hero-description">
+                            Combat misinformation with AI-powered real-time fake news detection. 
+                            Get instant analysis of news articles and headlines with confidence scores 
+                            and detailed explanations.
+                        </p>
+                        <button class="cta-button" onclick="showSection('submit')">
+                            Start Checking News
+                            <span class="button-icon">→</span>
+                        </button>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="visual-card">
+                            <div class="card-header">
+                                <span class="status-dot real"></span>
+                                <span class="status-text">VERIFIED</span>
+                            </div>
+                            <div class="card-content">
+                                <h3>Breaking: New Technology Advances</h3>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" style="width: 92%"></div>
+                                </div>
+                                <span class="confidence-text">92% Confidence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="vision" class="vision">
-    <h2 class="section-title">Our Vision</h2>
-    <p>
-      HakiCheck aims to combat misinformation with real-time, transparent verification, empowering users — especially in Sub-Saharan Africa — with truth and trust in the digital space.
-    </p>
-    <blockquote>“Without facts, you can’t have truth. Without truth, you can’t have trust.” – Maria Ressa</blockquote>
-  </section>
+        <!-- Submit Section -->
+        <section id="submit" class="section submit-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Check Your News</h2>
+                    <p class="section-description">
+                        Paste a news headline or full article below to get instant AI-powered analysis
+                    </p>
+                </div>
+                
+                <div class="submit-container">
+                    <form class="news-form" id="news-form">
+                        <div class="form-group">
+                            <label for="news-input" class="form-label">
+                                News Article or Headline
+                            </label>
+                            <textarea 
+                                id="news-input" 
+                                class="form-textarea" 
+                                placeholder="Paste your news article or headline here..."
+                                rows="6"
+                                required
+                            ></textarea>
+                            <div class="input-error" id="input-error"></div>
+                        </div>
+                        
+                        <button type="submit" class="submit-button" id="submit-button">
+                            <span class="button-text">Analyze News</span>
+                            <div class="loading-spinner" id="loading-spinner"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-  <section id="contact" class="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Project Lead: Sidney Muriuki</p>
-    <p>Email: <a href="mailto:sidneybarakamuriuki1@gmail.com">sidneybarakamuriuki1@gmail.com</a></p>
-    <p>Phone: <a href="tel:+254759456960">+254 759 456 960</a></p>
-  </section>
+        <!-- Results Section -->
+        <section id="results" class="section results-section">
+            <div class="container">
+                <div class="results-container" id="results-container">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>&copy; 2025 HakiCheck. All rights reserved.</p>
-  </footer>
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How HakiCheck Works</h2>
+                    <p class="section-description">
+                        Advanced AI technology to combat misinformation
+                    </p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">🤖</div>
+                        <h3 class="card-title">AI Analysis</h3>
+                        <p class="card-text">
+                            Our advanced machine learning models analyze text patterns, 
+                            source credibility, and linguistic markers to detect fake news.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">⚡</div>
+                        <h3 class="card-title">Real-time Detection</h3>
+                        <p class="card-text">
+                            Get instant results with confidence scores and detailed 
+                            explanations for every analysis.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">🌍</div>
+                        <h3 class="card-title">Focus on Africa</h3>
+                        <p class="card-text">
+                            Specially trained on Sub-Saharan African news patterns 
+                            and misinformation trends to provide accurate local context.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="importance-section">
+                    <h3 class="importance-title">Why Fighting Misinformation Matters</h3>
+                    <p class="importance-text">
+                        In Sub-Saharan Africa, misinformation can have serious consequences on public health, 
+                        democratic processes, and social cohesion. HakiCheck empowers citizens, journalists, 
+                        and organizations with the tools to verify information quickly and accurately, 
+                        promoting a more informed society.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p class="section-description">
+                        Have questions or feedback? We'd love to hear from you.
+                    </p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3 class="contact-info-title">Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">👨‍💻</div>
+                            <div class="contact-details">
+                                <h4>Developer</h4>
+                                <p>Sidney Muriuki</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>sidneybarakamuriuki1@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>+254759456960</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name" class="form-label">Name</label>
+                            <input 
+                                type="text" 
+                                id="contact-name" 
+                                class="form-input" 
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email" class="form-label">Email</label>
+                            <input 
+                                type="email" 
+                                id="contact-email" 
+                                class="form-input" 
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">Message</label>
+                            <textarea 
+                                id="contact-message" 
+                                class="form-textarea" 
+                                rows="4" 
+                                required
+                            ></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🔍</span>
+                    <span class="logo-text">HakiCheck</span>
+                </div>
+                <p class="footer-text">
+                    © 2025 HakiCheck. Fighting misinformation with AI technology.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
